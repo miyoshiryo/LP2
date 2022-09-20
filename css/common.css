@@ -33,10 +33,17 @@ header .logo img{
     z-index: 2;
 }
 
+header .navbar{
+    width: 80%;
+}
+
 header .navbar ul{
+    width: 100%;
     display: flex;
+    justify-content: space-around;
     float: right;
     position: relative;
+    left: 150px;
     margin: 15px 0;
 }
 
@@ -63,6 +70,7 @@ header .navbar ul .contact a{
 
 header .navbar ul .contact a:hover{
     opacity: 0.5;
+    color: #fff;
 }
 
 header .drawer{
@@ -71,29 +79,41 @@ header .drawer{
 
 .top{
     text-align: center;
-    margin: 150px 0 50px 0;
+   /* margin: 150px 0 50px 0;*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.top.inner{
-    display: inline-block;
+.top.first{
+    margin-top: 150px;
+}
+
+.top.second{
+    margin-bottom: 50px;
+}
+
+.top .inner{
+    width: 100%;
+    display: flex;
+    align-items: center;
     z-index: 2;
-    margin-right: 100px;
-    position: relative;
+    /*margin-right: 100px;*/
+    /*position: relative;*/
     bottom: 250px;
 }
 
 .font1{
+    width: 90%;
     text-align: center;
-    margin-right: 15px;
-    margin-bottom: 25px;
+   /* margin-right: 15px;
+    margin-bottom: 25px;*/
+    
 }
 
 .font1 p{
     color: #5b8fad;
-    background: -webkit-linear-gradient(35deg, rgb(189, 120, 230), #5b8fad);
+    background: -webkit-radial-gradient(rgb(189, 120, 230), #5b8fad);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 40px;
@@ -101,7 +121,7 @@ header .drawer{
     margin-bottom: 24px;
 }
 
-.font1 small{
+.font1 small{       
     color: #666;
     font-size: 25px;
     font-weight: bold;
@@ -110,12 +130,13 @@ header .drawer{
 }
 
 .top .top_img{
+    width: 100%;
     display: inline-block;
     position: relative;
 }
 
 .top .top_img img{
-    width: 500px;
+    width: 100%;
     height: auto;
 }
 
@@ -203,6 +224,14 @@ header .drawer{
     display: flex;
     width: 80%;
     margin: 0 auto;
+}
+
+.app_wrap.even{
+    flex-direction: row-reverse;
+}
+
+.app_wrap.even .app_item{
+    margin-left: 50px;
 }
 
 .app .app_item{
@@ -424,7 +453,19 @@ footer{
 }
 
 /*レスポンシブ対応*/
-@media screen and (max-width: 1024px){}
+@media screen and (max-width: 1024px){
+    .font1 p{
+        font-size: 30px;
+    }
+    
+    .font1 small{       
+        font-size: 20px;
+    }
+
+    .app_wrap.even .app_item{
+        margin-left: 30px;
+    }
+}
 
 @media screen and (max-width: 768px) {
     header .drawer{
@@ -461,20 +502,19 @@ footer{
     
     header .navbar{
         position: fixed;
-        width: 100%;
+        width: 50%;
         height: 100%;
         display: none;
         top: 0;
-        left: 0;
+        left: 50%;
         z-index: 3;
         background: #fff;
     }
 
     header .navbar ul{
-        display: block;
-        text-align: center;
-        float: none;
-        top: 20%;
+        display: flex;
+        flex-direction: column;
+        top: 10%;
     }
 
     header .navbar ul li a{
@@ -493,9 +533,23 @@ footer{
 
     .top .inner{
         display: unset;
-        margin-right: o;
+        margin-right: 0;
         bottom: 0;
     }
+
+     .top .inner .font1{
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+     }
+
+     .top.second{
+        display: none;
+     }
+
+     .feature{
+        margin-top: 30px;
+     }
 
     .app{
         padding:50px 50px 100px;
@@ -508,6 +562,10 @@ footer{
 
     .app .app_item{
         margin: 0;
+    }
+
+    .app_wrap.even .app_item{
+        margin-left: unset;
     }
 
     .app .app_img{
@@ -536,6 +594,64 @@ footer{
     }
 }
 
+@media screen  and (max-width: 550px){
+    header .navbar{
+        width: 70%;
+    }
+    
+    .feature .inner{
+        padding:0;
+    }
+
+
+    .font2::after{
+        width: 50px;
+    }
+
+    .how_to{
+        width: 80%;
+        margin: 20px auto 0;
+    }
+
+    .how_list li{
+        width: 80%;
+    }
+
+    .faq .inner{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .faq .inner .txt{
+        padding: 30px;
+    }
+
+    .faq .more{
+        width: unset;
+        margin: 20px 70px 0;
+
+    }
+
+    .news{
+        padding: unset;
+    }
+
+    .news .inner{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .news .txt{    
+        width: 80%;    
+        padding: 50px 20px;    
+    }
+
+    .contact_btn .btn{
+        width: unset;
+        margin: 0 70px;
+    }
+}
+
 @media screen and (max-width: 480px){
     header .logo img{
         width: 40px;
@@ -543,6 +659,15 @@ footer{
 
     header .drawer{
         margin: 4px 0;
+    }
+
+
+    header .navbar{
+        width: 100%;
+        left: 0;
+    }
+    header .navbar ul{
+        padding: unset;
     }
 
     .font1 p{
@@ -568,16 +693,20 @@ footer{
         height: auto;
     }
 
-    .feature .inner{
+    /*.feature .inner{
         padding:0;
-    }
-
-    .font2{
-        font-size: 20px;
     }
 
     .font2::after{
         width: 50px;
+    }*/
+
+    .feature .inner .font2{
+        font-size: 22px;
+    }
+
+    .feature .inner .font2 span{
+        font-size: 15px;
     }
 
     .font3{
@@ -590,7 +719,7 @@ footer{
     }
 
     .font5{
-        font-size: 20px;
+        font-size: 16px;
     }
     .app .descript{
         margin-bottom: 80px;
@@ -600,15 +729,15 @@ footer{
         width: 90%;
         margin: 0 auto;
     }
-
-    .how_to{
+    
+    /*.how_to{
         width: 96%;
         margin: 0 auto;
     }
 
     .how_list li{
         width: 80%;
-    }
+    }*/
 
     .faq .txt{
         padding: 50px 30px;
@@ -618,24 +747,24 @@ footer{
         line-height: 2;
     }
 
-    .faq .more{
+    /*.faq .more{
         width: unset;
         margin: 0 70px;
-    }
+    }*/
 
     .news{
         padding: 0 20px;
     }
     
-    .news .txt{        
+    /*.news .txt{        
         padding: 50px 30px;
         margin: 0 auto;    
-    }
+    }*/
 
-    .contact_btn .btn{
+    /*.contact_btn .btn{
         width: unset;
         margin: 0 70px;
-    }
+    }*/
 
     footer{
         padding: 15px 10px;
