@@ -468,12 +468,13 @@ footer{
 }
 
 @media screen and (max-width: 768px) {
+    /*ハンバーガーメニュー関連*/
     header .drawer{
         visibility: visible;
         width: 24px;
-        right: 15px;
         margin: 18px;
         position: absolute;
+        right: 15px;
         border-top: solid 4px #aaaaaa;
         cursor: pointer;
         z-index: 100;
@@ -499,28 +500,45 @@ footer{
     header .drawer::after{
         top: 15px;
     }
-    
+
+    body.nav-open header .drawer{
+        border-top: 0;
+    }
+
+    body.nav-open header .drawer::before{
+        top : 9px;
+        transform: rotate(-45deg);
+    }
+
+    body.nav-open header .drawer::after{
+        top: 9px;
+        transform: rotate(45deg);
+    }
+
     header .navbar{
         position: fixed;
         width: 50%;
         height: 100%;
         display: none;
         top: 0;
-        left: 50%;
+        right: 0;
         z-index: 3;
         background: #fff;
     }
 
     header .navbar ul{
-        display: flex;
-        flex-direction: column;
-        top: 10%;
+        display: block;
+        text-align: center;
+        float: none;
+        left: 5%;
+        top: 20%;
     }
 
     header .navbar ul li a{
         font: 18px;
         line-height: 2;
     }
+    /*/ハンバーガーメニュー関連*/
 
     header a .logo{
         top: 0;
@@ -579,26 +597,9 @@ footer{
         height: auto;
     }
 
-    body.nav-open header.drawer{
-        border-top: 0;
-    }
-
-    body.nav-open header .drawer::before{
-        top : 9px;
-        transform: rotate(-45deg);
-    }
-
-    body.nav-open header .drawer::after{
-        top: 9px;
-        transform: rotate(45deg);
-    }
 }
 
-@media screen  and (max-width: 550px){
-    header .navbar{
-        width: 70%;
-    }
-    
+@media screen  and (max-width: 541px){
     .feature .inner{
         padding:0;
     }
@@ -663,11 +664,7 @@ footer{
 
 
     header .navbar{
-        width: 100%;
-        left: 0;
-    }
-    header .navbar ul{
-        padding: unset;
+        width: 70%;
     }
 
     .font1 p{
